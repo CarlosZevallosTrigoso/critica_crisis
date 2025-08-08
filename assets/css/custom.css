@@ -1,0 +1,75 @@
+/* Importar EB Garamond desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+/* Variables CSS personalizadas para Hextra */
+:root {
+  --font-family-base: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-family-mono: 'JetBrains Mono', 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', 'Source Code Pro', monospace;
+}
+
+/* Sobrescribir las clases de Tailwind para usar EB Garamond */
+body {
+  font-family: var(--font-family-base);
+  font-feature-settings: "liga" 1, "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos específicos para encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-base);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Estilo especial para el título principal */
+h1 {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* Mejorar la legibilidad del texto de párrafos */
+p {
+  font-family: var(--font-family-base);
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+/* Estilos para contenido de documentación */
+.prose {
+  font-family: var(--font-family-base);
+}
+
+.prose p {
+  line-height: 1.8;
+  margin-bottom: 1.25em;
+}
+
+/* Conservar monospace para código */
+code, pre, .code {
+  font-family: var(--font-family-mono);
+}
+
+/* Navegación y UI elementos */
+nav, .navbar {
+  font-family: var(--font-family-base);
+}
+
+/* Callouts y elementos especiales */
+.callout {
+  font-family: var(--font-family-base);
+}
+
+/* Optimizaciones específicas para EB Garamond */
+@media screen {
+  body {
+    font-size: 18px; /* EB Garamond se ve mejor un poco más grande */
+  }
+}
+
+/* Ajustes para modo oscuro */
+@media (prefers-color-scheme: dark) {
+  body {
+    font-weight: 400; /* En modo oscuro, usar peso normal para mejor contraste */
+  }
+}
