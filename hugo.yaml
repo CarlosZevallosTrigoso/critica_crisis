@@ -1,0 +1,77 @@
+# Configuración fundamental de tu sitio web
+baseURL: "https://criticacrisis.netlify.app/"
+title: "Crítica Crisis"
+languageCode: "es"
+defaultContentLanguage: "es"
+
+# Habilita el procesamiento de información de Git
+# Esto permite que Hextra muestre automáticamente cuándo fue la última vez que actualizaste cada página
+enableGitInfo: true
+
+# Habilita la generación automática de robots.txt para mejorar SEO
+enableRobotsTXT: true
+
+# Configuración del sistema de módulos de Hugo
+# Esta sección es el corazón de cómo Hugo gestiona dependencias como temas
+module:
+  hugoVersion:
+    extended: true    # Necesario para las características avanzadas de CSS de Hextra
+    min: "0.146.0"   # Versión mínima de Hugo que soporta todas las características de Hextra
+  
+  # Lista de módulos externos que tu sitio necesita
+  imports:
+    - path: github.com/imfing/hextra  # El tema Hextra desde su repositorio oficial
+
+# Configuración de cómo Hugo procesa el contenido Markdown
+markup:
+  highlight:
+    noClasses: false  # Permite estilos CSS personalizados para bloques de código
+  goldmark:
+    renderer:
+      unsafe: true    # Permite HTML personalizado dentro de archivos Markdown cuando sea necesario
+
+# Parámetros que controlan la apariencia y comportamiento específicos de Hextra
+params:
+  # Configuración de la barra de navegación superior
+  navbar:
+    displayTitle: true    # Muestra el título "Crítica Crisis" en la barra superior
+    displayLogo: false    # No mostrar logo por ahora (puedes cambiarlo después)
+    width: wide          # Hace que la barra de navegación use más ancho de pantalla
+
+  # Configuración del ancho de las páginas de contenido
+  page:
+    width: normal  # Opciones disponibles: full (100%), wide (90%), normal (80%)
+
+  # Sistema de temas claro y oscuro
+  theme:
+    default: system      # Automáticamente usa la preferencia del dispositivo del usuario
+    displayToggle: true  # Muestra un botón para que los usuarios cambien manualmente entre claro y oscuro
+
+  # Configuración del pie de página
+  footer:
+    enable: true
+    displayCopyright: true     # Muestra información de copyright
+    displayPoweredBy: true     # Muestra "Powered by Hugo" (puedes deshabilitarlo si prefieres)
+    width: normal
+
+  # Configuración de fechas de última modificación
+  displayUpdatedDate: true
+  dateFormat: "2 de January de 2006"  # Formato de fecha en español
+
+  # Sistema de búsqueda integrado
+  search:
+    enable: true
+    type: flexsearch    # Sistema de búsqueda rápido que funciona sin servidor
+
+# Configuración del menú de navegación principal
+menu:
+  main:
+    - name: Inicio
+      pageRef: /
+      weight: 1         # Los números más bajos aparecen primero en el menú
+    - name: Blog
+      pageRef: /blog
+      weight: 2
+    - name: Acerca de
+      pageRef: /about
+      weight: 3
