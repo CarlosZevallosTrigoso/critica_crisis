@@ -1,27 +1,36 @@
-/* Importar EB Garamond desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+/* Importar Tinos desde Google Fonts */
+/* Estamos importando todos los pesos e itálicas para tener máxima flexibilidad tipográfica */
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-/* Fuente sans-serif para elementos UI */
+/* Fuente sans-serif para elementos de interfaz */
+/* Inter proporciona el contraste perfecto - moderna donde Tinos es clásica */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* Fuente monospace para código */
+/* JetBrains Mono complementa bien el carácter técnico pero elegante */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
 
 /* Variables CSS para la tipografía */
+/* Estas variables nos permiten ajustar toda la tipografía desde un lugar central */
 :root {
-  --font-family-primary: 'EB Garamond', Georgia, 'Times New Roman', serif;
+  --font-family-primary: 'Tinos', Georgia, 'Times New Roman', serif;
   --font-family-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-family-mono: 'JetBrains Mono', 'SF Mono', Monaco, monospace;
-  --base-font-size: 1.1875rem;
-  --line-height-base: 1.75;
+  /* Tinos funciona mejor con un tamaño ligeramente más grande que otras fuentes */
+  --base-font-size: 1.125rem;
+  /* Line-height optimizado para la altura x de Tinos */
+  --line-height-base: 1.7;
   --paragraph-spacing: 1.75rem;
-  --reading-measure: 75ch;
-  --heading-line-height: 1.3;
+  /* Medida de lectura calibrada para las proporciones de Tinos */
+  --reading-measure: 72ch;
+  --heading-line-height: 1.25;
 }
 
-/* Aplicar EB Garamond globalmente */
+/* Aplicar Tinos globalmente */
 html {
   font-family: var(--font-family-primary);
+  /* Activamos características OpenType para mejor tipografía */
+  font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
 }
 
 body {
@@ -29,16 +38,18 @@ body {
   font-size: var(--base-font-size);
   line-height: var(--line-height-base);
   font-weight: 400;
+  /* Suavizado de fuente optimizado para Tinos en pantallas modernas */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "liga" 1, "kern" 1, "calt" 1, "onum" 1;
   color: #1f2937;
 }
 
-/* Encabezados con EB Garamond */
+/* Encabezados con Tinos */
+/* Los encabezados son donde Tinos realmente brilla - mantiene la autoridad de Times pero con claridad moderna */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-primary);
-  font-weight: 600;
+  font-weight: 700;
+  /* Letter-spacing ligeramente negativo mejora la cohesión en títulos grandes */
   letter-spacing: -0.02em;
   line-height: var(--heading-line-height);
   margin-bottom: 1.25rem;
@@ -47,45 +58,47 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  /* H1 usa el peso máximo disponible en Tinos para máximo impacto */
   font-weight: 700;
   letter-spacing: -0.03em;
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   margin-bottom: 1.75rem;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 h2 {
-  font-size: 2.25rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 h3 {
-  font-size: 1.875rem;
-  font-weight: 600;
+  font-size: 1.75rem;
+  font-weight: 700;
 }
 
 h4 {
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 h5 {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 h6 {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
+  /* Small caps funciona especialmente bien con Tinos */
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #6b7280;
-  font-variant: small-caps;
 }
 
-/* Párrafos optimizados para EB Garamond */
+/* Párrafos optimizados para Tinos */
+/* Esta configuración aprovecha las proporciones únicas de Tinos para máxima legibilidad */
 p {
   font-family: var(--font-family-primary);
   line-height: var(--line-height-base);
@@ -93,43 +106,47 @@ p {
   font-size: var(--base-font-size);
   font-weight: 400;
   max-width: var(--reading-measure);
+  /* Justificación funciona bien con Tinos debido a su espaciado consistente */
   text-align: justify;
   hyphens: auto;
 }
 
 /* Párrafo introductorio destacado */
+/* El primer párrafo recibe tratamiento especial para enganchar al lector */
 .prose > p:first-of-type,
 .content > p:first-of-type,
 .lead {
-  font-size: 1.375rem;
+  font-size: 1.3125rem;
   font-weight: 400;
-  line-height: 1.65;
+  line-height: 1.6;
   color: #374151;
   text-align: left;
   margin-bottom: 2.25rem;
 }
 
 /* Drop cap clásico */
+/* Tinos permite drop caps muy elegantes debido a su diseño balanceado */
 .drop-cap::first-letter {
   font-family: var(--font-family-primary);
   float: left;
-  font-size: 4.5rem;
+  font-size: 4.25rem;
   line-height: 3.5rem;
   padding-right: 0.75rem;
-  padding-top: 0.5rem;
-  margin-bottom: -0.25rem;
+  padding-top: 0.25rem;
+  margin-bottom: -0.1rem;
   font-weight: 700;
   color: #1f2937;
 }
 
 /* Elementos de texto especiales */
+/* Las citas aprovechan la naturaleza expresiva de Tinos */
 blockquote {
   font-family: var(--font-family-primary);
   font-style: italic;
-  font-size: 1.3125rem;
-  line-height: 1.6;
+  font-size: 1.25rem;
+  line-height: 1.55;
   font-weight: 400;
-  border-left: 5px solid #6b7280;
+  border-left: 4px solid #4f46e5;
   padding-left: 2rem;
   padding-right: 1.5rem;
   padding-top: 1.5rem;
@@ -142,10 +159,11 @@ blockquote {
   text-align: left;
 }
 
+/* Comillas tipográficas elegantes */
 blockquote::before {
   content: '"';
-  font-size: 4rem;
-  color: #6b7280;
+  font-size: 3.75rem;
+  color: #4f46e5;
   position: absolute;
   left: -0.25rem;
   top: -0.75rem;
@@ -163,49 +181,40 @@ blockquote p:last-child {
   margin-bottom: 0;
 }
 
-/* Citas con atribución elegante */
+/* Citas con atribución */
 blockquote cite {
   font-style: normal;
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
   color: #6b7280;
   display: block;
   margin-top: 1.25rem;
   text-align: right;
-  font-variant: small-caps;
-  letter-spacing: 0.05em;
 }
 
 blockquote cite::before {
   content: "— ";
-  font-variant: normal;
 }
 
 /* Énfasis tipográfico */
+/* Tinos tiene itálicas muy expresivas que funcionan perfectamente para énfasis */
 em {
   font-style: italic;
   font-weight: 400;
 }
 
 strong {
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 /* Combinaciones de énfasis */
 strong em, em strong {
-  font-weight: 600;
+  font-weight: 700;
   font-style: italic;
 }
 
-/* Small caps para siglas */
-.small-caps {
-  font-variant: small-caps;
-  letter-spacing: 0.075em;
-  font-weight: 500;
-}
-
-/* Listas con EB Garamond */
+/* Listas con Tinos */
 ul, ol {
   font-family: var(--font-family-primary);
   line-height: var(--line-height-base);
@@ -219,6 +228,7 @@ li {
 }
 
 /* Listas de definición académicas */
+/* Perfectas para glosarios y términos técnicos en análisis crítico */
 dl {
   font-family: var(--font-family-primary);
   margin-bottom: var(--paragraph-spacing);
@@ -226,12 +236,10 @@ dl {
 }
 
 dt {
-  font-weight: 600;
+  font-weight: 700;
   color: #1f2937;
   margin-bottom: 0.5rem;
   font-size: 1.0625rem;
-  font-variant: small-caps;
-  letter-spacing: 0.05em;
 }
 
 dd {
@@ -243,6 +251,7 @@ dd {
 }
 
 /* Código - manteniendo claridad con monospace */
+/* El contraste entre Tinos y JetBrains Mono es muy efectivo */
 code, pre, .code, .hljs {
   font-family: var(--font-family-mono);
   font-size: 0.875rem;
@@ -278,7 +287,8 @@ pre code {
   font-size: 0.875rem;
 }
 
-/* Navegación - usando Inter para contraste */
+/* Navegación - usando Inter para contraste moderno */
+/* La combinación Tinos/Inter crea una jerarquía visual muy clara */
 nav, .navbar, .menu {
   font-family: var(--font-family-ui);
   font-weight: 500;
@@ -300,11 +310,11 @@ nav, .navbar, .menu {
   color: #111827;
 }
 
-/* Título del sitio en navbar con EB Garamond */
+/* Título del sitio en navbar con Tinos */
 .navbar .site-title {
   font-family: var(--font-family-primary);
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-weight: 700;
+  font-size: 1.375rem;
   letter-spacing: -0.02em;
   color: #111827;
 }
@@ -326,16 +336,16 @@ nav, .navbar, .menu {
 }
 
 /* Callouts académicos */
+/* Diseñados para complementar el carácter serio pero accesible de Tinos */
 .callout {
   font-family: var(--font-family-primary);
-  line-height: 1.65;
+  line-height: 1.6;
   font-weight: 400;
   border-radius: 8px;
   padding: 1.75rem;
   margin: 2.5rem 0;
-  border-left: 6px solid;
+  border-left: 5px solid;
   font-size: 1.0625rem;
-  font-style: italic;
 }
 
 .callout-info {
@@ -362,7 +372,7 @@ nav, .navbar, .menu {
   color: #15803d;
 }
 
-/* Cards elegantes */
+/* Cards académicas elegantes */
 .card {
   font-family: var(--font-family-primary);
   border-radius: 8px;
@@ -382,16 +392,16 @@ nav, .navbar, .menu {
 
 .card h3 {
   font-family: var(--font-family-primary);
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1.25rem;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   line-height: 1.3;
   color: #111827;
 }
 
 .card p {
-  font-size: 1.0625rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.65;
   margin-bottom: 1.25rem;
   color: #374151;
 }
@@ -409,10 +419,11 @@ button, .button {
 .search-input {
   font-family: var(--font-family-primary);
   font-weight: 400;
-  font-size: 1.0625rem;
+  font-size: 1rem;
 }
 
 /* Links elegantes */
+/* Los links aprovechan la legibilidad superior de Tinos */
 a {
   text-decoration: none;
   transition: all 0.2s ease;
@@ -425,7 +436,7 @@ a:hover {
 
 /* Links en contenido */
 .prose a {
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: underline;
   text-decoration-color: #c7d2fe;
   text-underline-offset: 3px;
@@ -438,7 +449,8 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
-/* Modo oscuro optimizado para EB Garamond */
+/* Modo oscuro optimizado para Tinos */
+/* Tinos mantiene su legibilidad excepcionalmente bien en modo oscuro */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #111827;
@@ -465,12 +477,12 @@ a:hover {
   
   blockquote {
     background-color: #1f2937;
-    border-left-color: #6b7280;
+    border-left-color: #6366f1;
     color: #e5e7eb;
   }
   
   blockquote::before {
-    color: #6b7280;
+    color: #6366f1;
   }
   
   blockquote cite {
@@ -532,6 +544,7 @@ a:hover {
 }
 
 /* Responsive typography */
+/* Tinos se adapta excepcionalmente bien a diferentes tamaños de pantalla */
 @media (max-width: 640px) {
   :root {
     --base-font-size: 1.0625rem;
@@ -541,11 +554,11 @@ a:hover {
   }
   
   h1 {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
   
   h2 {
-    font-size: 1.875rem;
+    font-size: 1.75rem;
   }
   
   h3 {
@@ -553,7 +566,7 @@ a:hover {
   }
   
   blockquote {
-    font-size: 1.1875rem;
+    font-size: 1.125rem;
     padding: 1.5rem;
     margin: 1.5rem 0;
   }
@@ -566,7 +579,7 @@ a:hover {
   .prose > p:first-of-type,
   .content > p:first-of-type,
   .lead {
-    font-size: 1.25rem;
+    font-size: 1.1875rem;
   }
   
   .card {
@@ -587,25 +600,26 @@ a:hover {
 /* Tablet */
 @media (min-width: 641px) and (max-width: 1024px) {
   :root {
-    --base-font-size: 1.125rem;
-    --reading-measure: 70ch;
+    --base-font-size: 1.0625rem;
+    --reading-measure: 68ch;
   }
 }
 
 /* Large screens */
+/* En pantallas grandes, Tinos realmente puede mostrar su elegancia */
 @media (min-width: 1200px) {
   :root {
-    --base-font-size: 1.25rem;
-    --line-height-base: 1.8;
+    --base-font-size: 1.1875rem;
+    --line-height-base: 1.75;
     --paragraph-spacing: 2rem;
   }
   
   h1 {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
   
   h2 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 }
 
@@ -638,22 +652,21 @@ a:hover {
 }
 
 /* Tablas académicas */
+/* Tinos funciona excepcionalmente bien en tablas debido a su espaciado consistente */
 table {
   font-family: var(--font-family-primary);
-  font-size: 1rem;
+  font-size: 0.9375rem;
   border-collapse: collapse;
   width: 100%;
   margin: 2.5rem 0;
 }
 
 th {
-  font-weight: 600;
+  font-weight: 700;
   background-color: #f9fafb;
   padding: 1.25rem;
   border: 1px solid #e5e7eb;
   text-align: left;
-  font-variant: small-caps;
-  letter-spacing: 0.05em;
 }
 
 td {
@@ -677,18 +690,18 @@ footer {
 .abstract {
   font-family: var(--font-family-primary);
   font-style: italic;
-  font-size: 1.125rem;
+  font-size: 1.0625rem;
   line-height: 1.7;
   background-color: #f8fafc;
   padding: 2rem;
   border-radius: 8px;
   margin: 2.5rem 0;
-  border-left: 6px solid #6b7280;
+  border-left: 5px solid #4f46e5;
 }
 
 .author-note {
   font-family: var(--font-family-primary);
-  font-size: 1rem;
+  font-size: 0.9375rem;
   color: #6b7280;
   font-style: italic;
   margin: 1.5rem 0;
@@ -706,11 +719,10 @@ hr {
 /* Destacados tipográficos */
 .highlight-text {
   background-color: #fef3c7;
-  border-left: 6px solid #f59e0b;
+  border-left: 5px solid #f59e0b;
   padding: 1.5rem;
   margin: 2rem 0;
   border-radius: 0 8px 8px 0;
-  font-style: italic;
 }
 
 /* Metadatos de artículos */
@@ -724,40 +736,9 @@ hr {
 
 .article-meta time {
   font-weight: 500;
-  font-variant: small-caps;
-  letter-spacing: 0.05em;
-}
-
-/* Epígrafes */
-.epigraph {
-  font-family: var(--font-family-primary);
-  font-style: italic;
-  font-size: 1.125rem;
-  text-align: center;
-  margin: 2.5rem 0;
-  color: #6b7280;
-}
-
-.epigraph cite {
-  font-style: normal;
-  font-size: 0.9375rem;
-  display: block;
-  margin-top: 0.75rem;
-  font-variant: small-caps;
-  letter-spacing: 0.05em;
 }
 
 /* Elementos de Hextra específicos */
 .hextra-container {
   font-family: var(--font-family-primary);
-}
-
-/* Números oldstyle cuando estén disponibles */
-.oldstyle-nums {
-  font-variant-numeric: oldstyle-nums;
-}
-
-/* Fracciones */
-.fractions {
-  font-variant-numeric: diagonal-fractions;
 }
