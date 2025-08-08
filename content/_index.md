@@ -1,47 +1,40 @@
 ---
 title: Crítica Crisis
-layout: hextra-home
+layout: docs
 ---
 
-{{< hextra/hero-badge >}}
-  <div class="hx-w-2 hx-h-2 hx-rounded-full hx-bg-primary-400"></div>
-  <span>Análisis crítico independiente</span>
-  {{< icon name="arrow-circle-right" >}}
-{{< /hextra/hero-badge >}}
+# Crítica Crisis
+## Documentación del análisis crítico contemporáneo
 
-<div class="hx-mt-6 hx-mb-6">
-{{< hextra/hero-headline >}}
-  Crítica Crisis&br;
-  Análisis profundo del mundo actual
-{{< /hextra/hero-headline >}}
-</div>
+Bienvenido al compendio de análisis crítico sobre los fenómenos que definen nuestro tiempo. Esta documentación está organizada como un recurso comprehensivo para entender las complejidades del mundo actual desde múltiples perspectivas.
 
-<div class="hx-mb-12">
-{{< hextra/hero-subtitle >}}
-  Exploramos las complejidades de nuestro tiempo con rigor intelectual y perspectiva crítica. Desde política hasta cultura, desentrañamos las narrativas que definen nuestra época.
-{{< /hextra/hero-subtitle >}}
-</div>
+{{< cards >}}
+  {{< card link="/metodologia" title="Metodología" icon="academic-cap" >}}
+  {{< card link="/analisis-politico" title="Análisis Político" icon="flag" >}}
+  {{< card link="/critica-cultural" title="Crítica Cultural" icon="sparkles" >}}
+  {{< card link="/filosofia-contemporanea" title="Filosofía Contemporánea" icon="light-bulb" >}}
+{{< /cards >}}
 
-<div class="hx-mb-6">
-{{< hextra/hero-button text="Explorar artículos" link="/blog" >}}
-</div>
+## Estructura de la documentación
 
-<div class="hx-mt-16">
-{{< hextra/feature-grid >}}
-  {{< hextra/feature-card
-    icon="document-text"
-    title="Análisis profundo"
-    subtitle="Artículos que van más allá de los titulares para examinar las raíces de los problemas contemporáneos."
-  >}}
-  {{< hextra/feature-card
-    icon="light-bulb"
-    title="Perspectiva crítica"
-    subtitle="Cuestionamos las narrativas dominantes y exploramos ángulos alternativos de comprensión."
-  >}}
-  {{< hextra/feature-card
-    icon="academic-cap"
-    title="Rigor intelectual"
-    subtitle="Cada pieza está respaldada por investigación cuidadosa y razonamiento fundamentado."
-  >}}
-{{< /hextra/feature-grid >}}
-</div>
+Esta documentación está organizada en secciones temáticas que se complementan entre sí:
+
+- **[Metodología](/metodologia)**: Marcos conceptuales y herramientas de análisis
+- **[Análisis Político](/analisis-politico)**: Examen de estructuras de poder y procesos políticos
+- **[Crítica Cultural](/critica-cultural)**: Interpretación de fenómenos culturales contemporáneos  
+- **[Filosofía Contemporánea](/filosofia-contemporanea)**: Aplicación de marcos filosóficos a problemas actuales
+
+{{< callout type="info" >}}
+**Navegación**: Utiliza el menú lateral para explorar las diferentes secciones. Cada sección contiene subsecciones organizadas de lo general a lo específico.
+{{< /callout >}}
+
+## Características de esta documentación
+
+- **Búsqueda global**: Encuentra cualquier concepto o tema específico
+- **Navegación contextual**: Enlaces bidireccionales entre conceptos relacionados
+- **Estructura jerárquica**: Progresión lógica desde fundamentos hasta aplicaciones
+- **Referencias cruzadas**: Conexiones explícitas entre diferentes áreas de análisis
+
+---
+
+**Última actualización**: {{< param "build.date" >}}
