@@ -75,3 +75,33 @@ menu:
     - name: Acerca de
       pageRef: /about
       weight: 3
+
+# ... (mantén toda la configuración anterior y agrega esto al final)
+
+# Configuración específica para blog
+blog:
+  list:
+    displayTags: true
+    sortBy: date
+    sortOrder: desc
+
+# Configuración para el pie de página personalizado
+params:
+  # ... (mantén todos los params anteriores y agrega estos)
+  
+  # Configuración de copyright personalizado
+  footer:
+    enable: true
+    displayCopyright: true
+    displayPoweredBy: false  # Oculta "Powered by Hugo" para un look más limpio
+    width: normal
+
+# Información personalizada para metadatos
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: github-dark
+    lineNos: true
+    tabWidth: 2
