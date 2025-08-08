@@ -1,102 +1,22 @@
-# Configuración fundamental de tu sitio web
+# Configuración fundamental del sitio web
 baseURL: "https://criticacrisis.netlify.app/"
 title: "Crítica Crisis"
 languageCode: "es"
 defaultContentLanguage: "es"
 
-# Habilita el procesamiento de información de Git
-# Esto permite que Hextra muestre automáticamente cuándo fue la última vez que actualizaste cada página
+# Características del sitio
 enableGitInfo: true
-
-# Habilita la generación automática de robots.txt para mejorar SEO
 enableRobotsTXT: true
 
-# Configuración del sistema de módulos de Hugo
-# Esta sección es el corazón de cómo Hugo gestiona dependencias como temas
+# Sistema de módulos de Hugo
 module:
   hugoVersion:
-    extended: true    # Necesario para las características avanzadas de CSS de Hextra
-    min: "0.146.0"   # Versión mínima de Hugo que soporta todas las características de Hextra
-  
-  # Lista de módulos externos que tu sitio necesita
+    extended: true
+    min: "0.146.0"
   imports:
-    - path: github.com/imfing/hextra  # El tema Hextra desde su repositorio oficial
+    - path: github.com/imfing/hextra
 
-# Configuración de cómo Hugo procesa el contenido Markdown
-markup:
-  highlight:
-    noClasses: false  # Permite estilos CSS personalizados para bloques de código
-  goldmark:
-    renderer:
-      unsafe: true    # Permite HTML personalizado dentro de archivos Markdown cuando sea necesario
-
-# Parámetros que controlan la apariencia y comportamiento específicos de Hextra
-params:
-  # Configuración de la barra de navegación superior
-  navbar:
-    displayTitle: true    # Muestra el título "Crítica Crisis" en la barra superior
-    displayLogo: false    # No mostrar logo por ahora (puedes cambiarlo después)
-    width: wide          # Hace que la barra de navegación use más ancho de pantalla
-
-  # Configuración del ancho de las páginas de contenido
-  page:
-    width: normal  # Opciones disponibles: full (100%), wide (90%), normal (80%)
-
-  # Sistema de temas claro y oscuro
-  theme:
-    default: system      # Automáticamente usa la preferencia del dispositivo del usuario
-    displayToggle: true  # Muestra un botón para que los usuarios cambien manualmente entre claro y oscuro
-
-  # Configuración del pie de página
-  footer:
-    enable: true
-    displayCopyright: true     # Muestra información de copyright
-    displayPoweredBy: true     # Muestra "Powered by Hugo" (puedes deshabilitarlo si prefieres)
-    width: normal
-
-  # Configuración de fechas de última modificación
-  displayUpdatedDate: true
-  dateFormat: "2 de January de 2006"  # Formato de fecha en español
-
-  # Sistema de búsqueda integrado
-  search:
-    enable: true
-    type: flexsearch    # Sistema de búsqueda rápido que funciona sin servidor
-
-# Configuración del menú de navegación principal
-menu:
-  main:
-    - name: Inicio
-      pageRef: /
-      weight: 1         # Los números más bajos aparecen primero en el menú
-    - name: Blog
-      pageRef: /blog
-      weight: 2
-    - name: Acerca de
-      pageRef: /about
-      weight: 3
-
-# ... (mantén toda la configuración anterior y agrega esto al final)
-
-# Configuración específica para blog
-blog:
-  list:
-    displayTags: true
-    sortBy: date
-    sortOrder: desc
-
-# Configuración para el pie de página personalizado
-params:
-  # ... (mantén todos los params anteriores y agrega estos)
-  
-  # Configuración de copyright personalizado
-  footer:
-    enable: true
-    displayCopyright: true
-    displayPoweredBy: false  # Oculta "Powered by Hugo" para un look más limpio
-    width: normal
-
-# Información personalizada para metadatos
+# Configuración de procesamiento de contenido
 markup:
   goldmark:
     renderer:
@@ -105,3 +25,62 @@ markup:
     style: github-dark
     lineNos: true
     tabWidth: 2
+    noClasses: false
+
+# Parámetros principales de Hextra
+params:
+  # Navegación
+  navbar:
+    displayTitle: true
+    displayLogo: false
+    width: wide
+
+  # Ancho de página
+  page:
+    width: normal
+
+  # Sistema de temas
+  theme:
+    default: system
+    displayToggle: true
+
+  # Pie de página
+  footer:
+    enable: true
+    displayCopyright: true
+    displayPoweredBy: false
+    width: normal
+
+  # Fechas y metadatos
+  displayUpdatedDate: true
+  dateFormat: "2 de January de 2006"
+
+  # Búsqueda
+  search:
+    enable: true
+    type: flexsearch
+
+  # CSS personalizado para EB Garamond
+  assets:
+    css:
+      - "css/custom.css"
+
+# Configuración de blog
+blog:
+  list:
+    displayTags: true
+    sortBy: date
+    sortOrder: desc
+
+# Menú de navegación
+menu:
+  main:
+    - name: Inicio
+      pageRef: /
+      weight: 1
+    - name: Blog
+      pageRef: /blog
+      weight: 2
+    - name: Acerca de
+      pageRef: /about
+      weight: 3
