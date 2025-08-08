@@ -37,4 +37,4 @@ Esta documentación está organizada en secciones temáticas que se complementan
 
 ---
 
-**Última actualización**: {{< param "build.date" >}}
+**Última actualización**: {{ now.Format "2 de January de 2006" }}
