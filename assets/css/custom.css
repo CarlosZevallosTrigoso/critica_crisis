@@ -1,24 +1,25 @@
-/* Importar Crimson Pro desde Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Importar Cormorant Garamond desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-/* Fuente monospace moderna para código */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
-
-/* Fuente sans-serif para elementos UI */
+/* Fuente sans-serif moderna para elementos UI */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Fuente monospace para código */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
 
 /* Variables CSS para la tipografía */
 :root {
-  --font-family-primary: 'Crimson Pro', Georgia, 'Times New Roman', serif;
-  --font-family-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Consolas', monospace;
+  --font-family-primary: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-family-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --base-font-size: 1.125rem;
-  --line-height-base: 1.75;
-  --paragraph-spacing: 1.5rem;
-  --reading-measure: 75ch;
+  --font-family-mono: 'JetBrains Mono', 'SF Mono', Monaco, monospace;
+  --base-font-size: 1.1875rem;
+  --line-height-base: 1.7;
+  --paragraph-spacing: 1.75rem;
+  --reading-measure: 70ch;
+  --heading-line-height: 1.25;
 }
 
-/* Aplicar Crimson Pro globalmente */
+/* Aplicar Cormorant Garamond globalmente */
 html {
   font-family: var(--font-family-primary);
 }
@@ -30,40 +31,43 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: "liga" 1, "kern" 1, "calt" 1;
+  font-feature-settings: "liga" 1, "kern" 1, "calt" 1, "onum" 1;
 }
 
-/* Encabezados con Crimson Pro - aprovechando sus pesos elegantes */
+/* Encabezados con Cormorant Garamond - aprovechando su elegancia editorial */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-primary);
   font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.3;
-  margin-bottom: 1rem;
-  margin-top: 2rem;
+  letter-spacing: -0.025em;
+  line-height: var(--heading-line-height);
+  margin-bottom: 1.25rem;
+  margin-top: 2.5rem;
+  color: #1a202c;
 }
 
 h1 {
   font-weight: 700;
-  letter-spacing: -0.03em;
-  font-size: 2.5rem;
+  letter-spacing: -0.035em;
+  font-size: 2.75rem;
+  margin-bottom: 1.75rem;
+  line-height: 1.15;
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
 
-h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1.25rem;
-}
-
 h3 {
-  font-size: 1.625rem;
+  font-size: 1.875rem;
   font-weight: 600;
+  line-height: 1.25;
 }
 
 h4 {
-  font-size: 1.375rem;
+  font-size: 1.5rem;
   font-weight: 500;
 }
 
@@ -76,11 +80,11 @@ h6 {
   font-size: 1.125rem;
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   font-size: 1rem;
 }
 
-/* Párrafos optimizados para Crimson Pro */
+/* Párrafos optimizados para Cormorant Garamond */
 p {
   font-family: var(--font-family-primary);
   line-height: var(--line-height-base);
@@ -88,26 +92,32 @@ p {
   font-size: var(--base-font-size);
   font-weight: 400;
   max-width: var(--reading-measure);
+  text-align: justify;
+  hyphens: auto;
 }
 
 /* Párrafo introductorio con estilo especial */
 .prose > p:first-of-type,
-.content > p:first-of-type {
-  font-size: 1.25rem;
+.content > p:first-of-type,
+.lead {
+  font-size: 1.375rem;
   font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.65;
   color: #2d3748;
+  text-align: left;
+  margin-bottom: 2rem;
 }
 
-/* Drop cap para primeras letras (opcional) */
+/* Drop cap clásico para primeras letras */
 .drop-cap::first-letter {
   font-family: var(--font-family-primary);
   float: left;
-  font-size: 4rem;
-  line-height: 3rem;
-  padding-right: 0.5rem;
-  padding-top: 0.25rem;
-  font-weight: 600;
+  font-size: 4.5rem;
+  line-height: 3.5rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  margin-bottom: -0.25rem;
+  font-weight: 700;
   color: #2d3748;
 }
 
@@ -115,40 +125,55 @@ p {
 blockquote {
   font-family: var(--font-family-primary);
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: 1.3125rem;
   line-height: 1.6;
   font-weight: 400;
-  border-left: 4px solid #4a5568;
-  padding-left: 1.5rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin: 2rem 0;
-  background-color: #f7fafc;
-  border-radius: 0 8px 8px 0;
+  border-left: 5px solid #2d3748;
+  padding-left: 2rem;
+  padding-right: 1.5rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  margin: 2.5rem 0;
+  background-color: #f8fafc;
+  border-radius: 0 10px 10px 0;
   max-width: var(--reading-measure);
+  position: relative;
+}
+
+blockquote::before {
+  content: '"';
+  font-size: 4rem;
+  color: #4a5568;
+  position: absolute;
+  left: -0.25rem;
+  top: -0.75rem;
+  font-weight: 400;
+  line-height: 1;
 }
 
 blockquote p {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
 blockquote p:last-child {
   margin-bottom: 0;
 }
 
-/* Citas con atribución */
+/* Citas con atribución elegante */
 blockquote cite {
   font-style: normal;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #718096;
   display: block;
-  margin-top: 0.75rem;
+  margin-top: 1rem;
+  text-align: right;
 }
 
 blockquote cite::before {
   content: "— ";
+  font-weight: 400;
 }
 
 /* Énfasis tipográfico */
@@ -168,13 +193,14 @@ strong em, em strong {
   font-style: italic;
 }
 
-/* Small caps para abreviaciones */
+/* Small caps para siglas y abreviaciones */
 .small-caps {
   font-variant: small-caps;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.075em;
+  font-weight: 500;
 }
 
-/* Listas con Crimson Pro */
+/* Listas con Cormorant Garamond */
 ul, ol {
   font-family: var(--font-family-primary);
   line-height: var(--line-height-base);
@@ -183,32 +209,35 @@ ul, ol {
 }
 
 li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
   font-weight: 400;
 }
 
-/* Listas de definición */
+/* Listas de definición académicas */
 dl {
   font-family: var(--font-family-primary);
   margin-bottom: var(--paragraph-spacing);
+  max-width: var(--reading-measure);
 }
 
 dt {
   font-weight: 600;
   color: #2d3748;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.0625rem;
 }
 
 dd {
-  margin-bottom: 1rem;
-  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
   font-style: italic;
+  line-height: 1.65;
 }
 
-/* Código - manteniendo monospace */
+/* Código - manteniendo claridad con monospace */
 code, pre, .code, .hljs {
   font-family: var(--font-family-mono);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 
@@ -216,9 +245,9 @@ code, pre, .code, .hljs {
 code:not(pre code) {
   background-color: #edf2f7;
   color: #2d3748;
-  padding: 0.125rem 0.375rem;
+  padding: 0.15rem 0.4rem;
   border-radius: 4px;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
@@ -226,10 +255,10 @@ code:not(pre code) {
 pre {
   background-color: #2d3748;
   color: #e2e8f0;
-  padding: 1.25rem;
-  border-radius: 8px;
+  padding: 1.5rem;
+  border-radius: 10px;
   overflow-x: auto;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
   border: 1px solid #4a5568;
   line-height: 1.5;
 }
@@ -238,10 +267,10 @@ pre code {
   background: none;
   padding: 0;
   color: inherit;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
 }
 
-/* Navegación - usando Inter para contraste */
+/* Navegación - usando Inter para contraste moderno */
 nav, .navbar, .menu {
   font-family: var(--font-family-ui);
   font-weight: 500;
@@ -249,6 +278,7 @@ nav, .navbar, .menu {
 
 .navbar {
   border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 0;
 }
 
 .navbar a {
@@ -261,12 +291,12 @@ nav, .navbar, .menu {
   font-weight: 600;
 }
 
-/* Título del sitio en navbar con Crimson Pro */
+/* Título del sitio en navbar con Cormorant Garamond */
 .navbar .site-title {
   font-family: var(--font-family-primary);
   font-weight: 600;
-  font-size: 1.25rem;
-  letter-spacing: -0.01em;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
 }
 
 /* Contenido de documentación */
@@ -285,16 +315,17 @@ nav, .navbar, .menu {
   font-family: var(--font-family-primary);
 }
 
-/* Callouts elegantes */
+/* Callouts con estilo editorial */
 .callout {
   font-family: var(--font-family-primary);
   line-height: 1.65;
   font-weight: 400;
-  border-radius: 8px;
-  padding: 1.25rem;
-  margin: 2rem 0;
-  border-left: 5px solid;
-  font-size: 1rem;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 2.5rem 0;
+  border-left: 6px solid;
+  font-size: 1.0625rem;
+  font-style: italic;
 }
 
 .callout-info {
@@ -321,34 +352,36 @@ nav, .navbar, .menu {
   color: #22543d;
 }
 
-/* Cards académicas */
+/* Cards editoriales elegantes */
 .card {
   font-family: var(--font-family-primary);
-  border-radius: 8px;
+  border-radius: 10px;
   transition: all 0.3s ease;
   border: 1px solid #e2e8f0;
   background-color: #ffffff;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
   border-color: #cbd5e0;
 }
 
 .card h3 {
   font-family: var(--font-family-primary);
   font-weight: 600;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.375rem;
+  line-height: 1.3;
 }
 
 .card p {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   line-height: 1.7;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 /* Botones con Inter */
@@ -356,7 +389,7 @@ button, .button {
   font-family: var(--font-family-ui);
   font-weight: 500;
   letter-spacing: 0.025em;
-  border-radius: 6px;
+  border-radius: 8px;
   transition: all 0.2s ease;
 }
 
@@ -364,53 +397,64 @@ button, .button {
 .search-input {
   font-family: var(--font-family-primary);
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.0625rem;
 }
 
 /* Links elegantes */
 a {
   text-decoration: none;
   transition: all 0.2s ease;
-  color: #3182ce;
-}
-
-a:hover {
   color: #2c5282;
 }
 
-/* Links en contenido con underline sutil */
+a:hover {
+  color: #2a4365;
+}
+
+/* Links en contenido con subrayado editorial */
 .prose a {
   font-weight: 500;
   text-decoration: underline;
   text-decoration-color: #bee3f8;
-  text-underline-offset: 3px;
-  transition: text-decoration-color 0.2s ease;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: all 0.2s ease;
 }
 
 .prose a:hover {
   text-decoration-color: #3182ce;
+  text-decoration-thickness: 2px;
 }
 
-/* Modo oscuro optimizado para Crimson Pro */
+/* Modo oscuro optimizado para Cormorant Garamond */
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #1a202c;
     color: #e2e8f0;
   }
   
+  h1, h2, h3, h4, h5, h6 {
+    color: #f7fafc;
+  }
+  
   .prose > p:first-of-type,
-  .content > p:first-of-type {
+  .content > p:first-of-type,
+  .lead {
     color: #e2e8f0;
   }
   
   .drop-cap::first-letter {
-    color: #e2e8f0;
+    color: #f7fafc;
   }
   
   blockquote {
     background-color: #2d3748;
     border-left-color: #4a5568;
     color: #e2e8f0;
+  }
+  
+  blockquote::before {
+    color: #718096;
   }
   
   blockquote cite {
@@ -426,6 +470,11 @@ a:hover {
     background-color: #2d3748;
     border-color: #4a5568;
     color: #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  
+  .card:hover {
+    box-shadow: 0 12px 28px rgba(0,0,0,0.3);
   }
   
   .navbar {
@@ -438,25 +487,25 @@ a:hover {
   }
   
   dt {
-    color: #e2e8f0;
+    color: #f7fafc;
   }
 }
 
 /* Responsive typography */
 @media (max-width: 640px) {
   :root {
-    --base-font-size: 1rem;
-    --line-height-base: 1.7;
-    --paragraph-spacing: 1.25rem;
+    --base-font-size: 1.0625rem;
+    --line-height-base: 1.65;
+    --paragraph-spacing: 1.5rem;
     --reading-measure: 100%;
   }
   
   h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
   }
   
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.875rem;
   }
   
   h3 {
@@ -464,31 +513,54 @@ a:hover {
   }
   
   blockquote {
-    font-size: 1.125rem;
-    padding: 1rem;
-    margin: 1rem 0;
+    font-size: 1.1875rem;
+    padding: 1.25rem;
+    margin: 1.5rem 0;
+  }
+  
+  blockquote::before {
+    font-size: 3rem;
+    top: -0.5rem;
   }
   
   .prose > p:first-of-type,
-  .content > p:first-of-type {
-    font-size: 1.125rem;
+  .content > p:first-of-type,
+  .lead {
+    font-size: 1.25rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  p {
+    text-align: left;
+    hyphens: none;
   }
 }
 
 /* Tablet */
 @media (min-width: 641px) and (max-width: 1024px) {
   :root {
-    --base-font-size: 1.0625rem;
-    --reading-measure: 70ch;
+    --base-font-size: 1.125rem;
+    --reading-measure: 65ch;
   }
 }
 
 /* Large screens */
 @media (min-width: 1200px) {
   :root {
-    --base-font-size: 1.1875rem;
-    --line-height-base: 1.8;
-    --paragraph-spacing: 1.75rem;
+    --base-font-size: 1.25rem;
+    --line-height-base: 1.75;
+    --paragraph-spacing: 2rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
   }
 }
 
@@ -512,7 +584,7 @@ a:hover {
 .sidebar nav a {
   font-weight: 400;
   transition: font-weight 0.2s ease;
-  font-size: 0.925rem;
+  font-size: 0.9375rem;
 }
 
 .sidebar nav a:hover,
@@ -523,24 +595,24 @@ a:hover {
 /* Tablas académicas */
 table {
   font-family: var(--font-family-primary);
-  font-size: 0.95rem;
+  font-size: 1rem;
   border-collapse: collapse;
   width: 100%;
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 
 th {
   font-weight: 600;
   background-color: #f7fafc;
-  padding: 1rem;
+  padding: 1.25rem;
   border: 1px solid #e2e8f0;
   text-align: left;
-  font-size: 0.9rem;
+  font-size: 0.9375rem;
 }
 
 td {
   font-weight: 400;
-  padding: 1rem;
+  padding: 1.25rem;
   border: 1px solid #e2e8f0;
 }
 
@@ -551,62 +623,84 @@ footer {
   font-weight: 400;
   border-top: 1px solid #e2e8f0;
   margin-top: 4rem;
-  padding-top: 2rem;
+  padding-top: 2.5rem;
 }
 
 /* Elementos especiales para contenido académico */
 .abstract {
   font-family: var(--font-family-primary);
   font-style: italic;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.7;
   background-color: #f7fafc;
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin: 2rem 0;
-  border-left: 4px solid #4a5568;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2.5rem 0;
+  border-left: 6px solid #2d3748;
 }
 
 .author-note {
   font-family: var(--font-family-primary);
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #718096;
   font-style: italic;
-  margin: 1rem 0;
-}
-
-/* Números de línea y referencias */
-.line-numbers {
-  font-family: var(--font-family-mono);
-  font-size: 0.8rem;
-  color: #a0aec0;
+  margin: 1.5rem 0;
+  text-align: center;
 }
 
 /* Separadores elegantes */
 hr {
   border: none;
   height: 1px;
-  background: linear-gradient(to right, transparent, #e2e8f0, transparent);
-  margin: 3rem 0;
+  background: linear-gradient(to right, transparent, #2d3748, transparent);
+  margin: 4rem 0;
 }
 
 /* Destacados tipográficos */
 .highlight-text {
   background-color: #fff5f5;
-  border-left: 4px solid #f56565;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 0 6px 6px 0;
+  border-left: 6px solid #f56565;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 10px 10px 0;
+  font-style: italic;
 }
 
 /* Metadatos de artículos */
 .article-meta {
   font-family: var(--font-family-ui);
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   color: #718096;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .article-meta time {
   font-weight: 500;
+}
+
+/* Notas al pie */
+.footnote {
+  font-size: 0.875rem;
+  color: #718096;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+
+/* Epígrafes */
+.epigraph {
+  font-family: var(--font-family-primary);
+  font-style: italic;
+  font-size: 1.125rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: #4a5568;
+}
+
+.epigraph cite {
+  font-style: normal;
+  font-size: 0.9375rem;
+  display: block;
+  margin-top: 0.5rem;
 }
