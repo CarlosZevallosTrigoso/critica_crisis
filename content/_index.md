@@ -36,5 +36,3 @@ Esta documentación está organizada en secciones temáticas que se complementan
 - **Referencias cruzadas**: Conexiones explícitas entre diferentes áreas de análisis
 
 ---
-
-**Última actualización**: {{ now.Format "2 de January de 2006" }}
