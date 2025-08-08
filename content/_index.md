@@ -3,7 +3,6 @@ title: Crítica Crisis
 layout: docs
 ---
 
-# Crítica Crisis
 ## Documentación del análisis crítico contemporáneo
 
 Bienvenido al compendio de análisis crítico sobre los fenómenos que definen nuestro tiempo. Esta documentación está organizada como un recurso comprehensivo para entender las complejidades del mundo actual desde múltiples perspectivas.
