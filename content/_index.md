@@ -1,6 +1,6 @@
 ---
 title: Crítica Crisis
-layout: docs
+layout: page
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor porttitor vehicula. Suspendisse eu libero nec velit accumsan euismod. Morbi ultricies bibendum magna quis tempus. Curabitur iaculis mi vel elit bibendum ultrices. Aenean ornare risus eget ante faucibus pulvinar. Morbi scelerisque sapien non nisi euismod, vitae ultrices nunc ornare. Suspendisse eleifend justo sed lectus bibendum fermentum. Phasellus aliquam semper ligula, quis accumsan sem vestibulum ac. Nulla pretium, lectus non posuere suscipit, eros mi ullamcorper libero, porttitor luctus ex risus vitae lacus. Cras mi arcu, efficitur sed ipsum sit amet, consequat lobortis libero. Proin imperdiet leo ut luctus posuere. Donec viverra augue non laoreet dignissim. Interdum et malesuada fames ac ante ipsum primis in faucibus.
