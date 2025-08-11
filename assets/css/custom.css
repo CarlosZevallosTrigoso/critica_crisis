@@ -112,10 +112,9 @@ p {
 }
 
 /* Párrafo introductorio destacado */
-/* El primer párrafo recibe tratamiento especial para enganchar al lector */
-.prose > p:first-of-type,
-.content > p:first-of-type,
-.lead {
+/* Solo aplicar a párrafos marcados específicamente como lead o intro */
+.lead,
+.intro-paragraph {
   font-size: 1.3125rem;
   font-weight: 400;
   line-height: 1.6;
@@ -465,9 +464,8 @@ a:hover {
     color: #9ca3af;
   }
   
-  .prose > p:first-of-type,
-  .content > p:first-of-type,
-  .lead {
+  .lead,
+  .intro-paragraph {
     color: #e5e7eb;
   }
   
@@ -576,9 +574,8 @@ a:hover {
     top: -0.5rem;
   }
   
-  .prose > p:first-of-type,
-  .content > p:first-of-type,
-  .lead {
+  .lead,
+  .intro-paragraph {
     font-size: 1.1875rem;
   }
   
